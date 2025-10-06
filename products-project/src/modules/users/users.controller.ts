@@ -12,8 +12,8 @@ export class UsersController {
     return this.usersService.findAllUsers();
   }
 
-  @Get("id")
-  findOneUser(@Param("id") id: string){
+  @Get(':id')
+  findOneUser(@Param('id') id: string){
     return this.usersService.findOneUser(Number(id))
   }
 
@@ -22,7 +22,7 @@ export class UsersController {
     return this.usersService.createUser(body);
   }
 
-  @Put("id")
+  @Put(":id")
   updateUser(@Param ("id") id:string, @Body() body:UpdateUserDTO ){
     return this.usersService.updateUser(Number(id), body);
   }

@@ -13,7 +13,7 @@ export class ProductsController {
         return this.productService.findAllProducts();
     }
 
-    @Get('id')
+    @Get(':id')
     findOneProduct(@Param("id") id:string){
         return this.productService.findOneProduct(Number(id));
     }
