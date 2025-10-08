@@ -4,9 +4,9 @@ import { IUser } from 'src/interfaces/IUser';
 @Injectable()
 export class UsersService {
     private users:IUser[]=[
-      {id: 1, name: "Sofia", age: 15,  email:"sofia@gmail.com", password:"1234"}, 
-      {id: 2, name: "Laura", age: 20, email:"laura@gmail.com", password:"12345"}, 
-      {id: 3, name: "Sebastian", age: 30, email:"sebas@gmail.com", password:"12346"}, 
+      {id: 1, name: "Sofia", age: 15,  email:"sofia@gmail.com", password:"123458967"}, 
+      {id: 2, name: "Laura", age: 20, email:"laura@gmail.com", password:"1234588888"}, 
+      {id: 3, name: "Sebastian", age: 30, email:"sebas@gmail.com", password:"1234698565"}, 
     ]
   
     findAllUsers(){
@@ -42,6 +42,9 @@ export class UsersService {
     deleteUser(id:number){
       const user=this.users.findIndex((user)=>user.id==id);
       this.users.splice(user,1)
-      return {delete:true}
+      return {
+        delete:true,
+        message:"El usuario fue eliminado correctamente"
+      }
     }
 }
